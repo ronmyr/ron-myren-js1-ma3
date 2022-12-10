@@ -10,35 +10,39 @@ body {
   }
   .resultscontainer {
     display: flex;
+    width: 100%;
     justify-content: center;
-    color:#FC6042;
+    color:#000000;
+    margin: 20%;
+    border-radius: 2px;
+    border-color: black;
 }
-    .loader {
 
-        display: flex;
-        width: 8vmax;
-        height: 8vmax;
-        border-right: 4px solid #FC6042;
-        border-radius: 100%;
-        animation: spinRight 800ms linear infinite; 
-    }
+ .loader {
+   display: flex;
+   width: 8vmax;
+   height: 8vmax;
+   border-right: 4px solid #FC6042;
+   border-radius: 100%;
+   animation: spinRight 800ms linear infinite; 
+}
         
-        ::after {
-          width: auto;
-          height: auto;
-          top: calc(50% - 2vmax);
-          left: calc(50% - 2vmax);
-          border: 0;
-          border-right: 2px solid #FC6042;
-          animation: none;
-        }
+ ::after {
+   width: auto;
+   height: auto;
+   top: calc(50% - 2vmax);
+   left: calc(50% - 2vmax);
+   border: 0;
+   border-right: 2px solid #FC6042;
+   animation: none;
+}
       
-      @keyframes spinLeft {
-        from {transform:rotate(0deg);}
-        to {transform:rotate(720deg);}
-      }
+@keyframes spinLeft {
+   from {transform:rotate(0deg);}
+   to {transform:rotate(720deg);}
+ }
       
-      @keyframes spinRight {
-        from {transform:rotate(360deg);}
-        to {transform:rotate(0deg);}
-      }
+ @keyframes spinRight {
+   from {transform:rotate(360deg);}
+   to {transform:rotate(0deg);}
+}

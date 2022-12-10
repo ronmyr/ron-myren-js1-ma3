@@ -9,24 +9,30 @@ const loader = document.querySelector(".loader");
         try {
             const response = await fetch(corsFix);
             const data = await response.json();
-            const list = data;
-            resultscontainer.innerHTML  = "";
-                for (var i = 0; i < list.lenght; i++) {
+            const list = data.results;
+            console.log(data.results);
+            loader.style.cssText = `display: none;`
+            
+                for (let i = 0; i < list.length; i++) {
+
                     if (i === 8) {
                         break;
                     }
+                    
                     resultscontainer.innerHTML += 
-                    `   <li><p>Name: ${list[i].name}</p></li>
-                        <li><p>Name: ${list[i].rating}</p></li>
-                        <li><p>Name: ${list[i].tags.lenght}</p></li>`;
-                        console.log(resultscontainer);
+                    `   
+                    <ul>
+                        <li><p>Name: ${list[i].name}</p></li>
+                        <li><p>Rating: ${list[i].rating}</p></li>
+                        <li><p>Tags: ${list[i].tags.length}</p></li>
+                        </ul>`;   
                 }
+
         } catch (error) {
 
             resultscontainer.innerHTML = "";
-            loader.style.csstext = `display: none;`
+            loader.style.cssText = `display: none;`
             resultscontainer.innerHTML = "An error occured!"
-            console.log(resultscontainer);
         }
     }
 
